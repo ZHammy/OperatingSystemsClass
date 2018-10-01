@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
     if(getpid()==parent){
         fork();
         if(getpid()!=parent){
-            execl("/bin/more","/bin/more",argv[1],NULL);
+            execl("usr/bin/more","usr/bin/more",argv[1],NULL);
 
         }
     }
