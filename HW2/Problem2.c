@@ -58,7 +58,6 @@ int main(int argc, char *argv[])
             lines[i][strlen(lines[i])-1] = '\0';
             i = i + 1;
     }
-    i--;
     fclose(fp);
     char subjectLine[1024];
     sprintf(subjectLine, "\"%d\"", i);

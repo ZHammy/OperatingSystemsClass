@@ -2,7 +2,7 @@
 #include <sys/types.h>
 #include <string.h>
 #include <ctype.h>
-#include <fcntl.h> 
+#include <fcntl.h>
 #include <unistd.h>
 #include <unistd.h>
 
@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     //Check if the code being run is the child
     if(parent!=getpid()){
         //If it is the child, get the file descriptor for the desired file
-        int fileDescriptor=open(argv[2],O_RDWR|O_CREAT);
+        int fileDescriptor=open(argv[2],O_RDWR|O_CREAT,0666);
         //Now redirect standard outputs to the file name
         dup2(fileDescriptor,1);
         dup2(fileDescriptor,2);
