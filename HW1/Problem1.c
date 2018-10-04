@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <sys/types.h>
 #include <string.h>
@@ -39,7 +38,8 @@ int main(int argc, char *argv[])
     int tens=1;
     //The conversion is done by converting the ascii value to an int and multiplying
     //by the appropriate amount of tens
-    for(int i=strlen(argv[1])-1;i>-1;i--){
+	int i=0;
+    for(i=strlen(argv[1])-1;i>-1;i--){
         myNumber+=(((argv[1][i])-48)*tens);
         tens*=10;
     }
@@ -51,13 +51,13 @@ int main(int argc, char *argv[])
         fork();
     }
     if(getpid()==parent){
-        for(int i=0;i<myNumber;i++){
+        for(i=0;i<myNumber;i++){
             printf("This is the main process, my PID is %d \n",getpid());
             sleep(2);
         }
     }
     else{
-        for(int i=0;i<myNumber;i++){
+        for(i=0;i<myNumber;i++){
             printf("This is a child process, my PID is %d, my Parent PID is %d\n",getpid(),getppid());
             sleep(2);
         }
